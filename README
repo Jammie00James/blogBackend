@@ -1,1 +1,53 @@
+This is a very simple blog backend solution. It is Deployed as a Serverless Function on GCP.t
+It is able to create, update, delete, and get blog posts whichis in sync with the mongodb DataBase
+
+ENDPOINTS
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+* Create Blog Post
+ENDPOINT: http://us-central1-blog-backend-project.cloudfunctions.net/blogBackend/api/post/create
+METHOD: POST
+BODY: A post Json Object with (title,content, author), EXAMPLE => {"title":"POST TITLE", "content":"POST CONTENT", "author":"POST AUTHOR"}
+RESPONSE: When successful, it returns a JSON object of the newly created post.
+
+*NOTE* === There must be a value for all the fields
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+* Get a Single Blog Post
+ENDPOINT: http://us-central1-blog-backend-project.cloudfunctions.net/blogBackend/api/post/getOne/<PostId>
+METHOD: GET
+BODY: No Body
+RESPONSE: When successful, it returns a JSON object of the post.
+
+*NOTE* === Replace <PostId> with the id of the post You want to get. Must be a valid ID or it returns an error message
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+* Get all Blog Posts
+ENDPOINT: http://us-central1-blog-backend-project.cloudfunctions.net/blogBackend/api/post/getAll
+METHOD: GET
+BODY: No Body
+RESPONSE: When successful, it returns a JSON object of all Blog Posts.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+* Update a Single Blog Post
+ENDPOINT: http://us-central1-blog-backend-project.cloudfunctions.net/blogBackend/api/post/update/<PostId>
+METHOD: PUT
+BODY:A post Json Object only containing fields to be updated, EXAMPLE => {"title":"NEW POST TITLE", "author":"NEW POST AUTHOR"}
+RESPONSE: When successful, it returns a success message
+
+*NOTE* === Replace <PostId> with the id of the post You want to update. Must be a valid ID or it returns an error message
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* DELETE Blog Post
+ENDPOINT: http://us-central1-blog-backend-project.cloudfunctions.net/blogBackend/api/post/delete/<PostId>
+METHOD: DELETE
+BODY: No Body
+RESPONSE: When successful, it returns a success message 
+
+*NOTE* === Replace <PostId> with the id of the post You want to delete. Must be a valid ID or it returns an error message
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+If any other endpoint is accessed, it returns a 404 error
+
+
+MAKE SURE TO USE THE CORRECT REQUEST METHODS
 
